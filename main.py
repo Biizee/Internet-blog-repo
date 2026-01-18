@@ -32,3 +32,18 @@ second_comment = Comments.objects.get(id = 2)
 #!--Relating comments to post
 #first_comment.many_to_many.add(first_post)
 #second_comment.many_to_many.add(first_post)
+
+#!--Changing text of first post
+first_post.text = "Я хочу навчитися програмувати на пайтоні, як його правильно встановити, щоб потім не вертатися до цього. Тільки будь ласка без глупих відповідей."
+first_post.save()
+
+
+#!--Creating and delete second post for testing
+#second_post = Post.objects.create(
+#    name = "Gugugaga",
+#    text = "Gugugugagagugugau",
+#
+#)
+
+second_post = Post.objects.get(id = 4)
+second_post.delete()
