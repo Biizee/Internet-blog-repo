@@ -17,7 +17,7 @@ class Comments(models.Model):
     autor = models.CharField(max_length=100)
     date = models.DateField(auto_now_add=True)
     date_with_time = models.DateTimeField(auto_now_add=True)
-    many_to_many = models.ManyToManyField("Post", related_name="Many_to_many")
+    to_post = models.ForeignKey(Post, on_delete=models.PROTECT)
 
     def __str__(self):
-        return self.name
+        return self.text
